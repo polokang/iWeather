@@ -1,25 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./styles/main.css";
+
+import Header from "./weather/Header";
+import Footer from "./weather/Footer";
+import Forecast from "./weather/Forecast";
+import CityCondition from "./weather/CityCondition";
+
+const data = {
+  city: "Brisbane, Au",
+  humidity: 62,
+  windSpeed: 9,
+  windDirection: "NS",
+  temp: { C: 26, F: 70 }
+};
+
+const forecastData = [
+  { day: "Fri", time: "13:00", high: { C: 30, F: 80 }, low: { C: 20, F: 60 } },
+  { day: "Fri", time: "13:00", high: { C: 30, F: 80 }, low: { C: 20, F: 60 } }
+];
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="weather-channel__container">
+        <Header />
+        <CityCondition data={data} />
+        <Forecast data={forecastData} />
+        <Footer />
       </div>
     );
   }
