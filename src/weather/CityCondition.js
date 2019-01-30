@@ -17,12 +17,12 @@ import icompass from "../images/icon-compass.png";
  */
 
 export default function CityCondition(props) {
-  const data = props.data;
+  const { data, unit } = props;
   return (
     <section className="weather-condition">
       <div className="weather-condition__location">{data.city}</div>
       <div style={{ textAlign: "center", fontSize: "14px" }}>Clear</div>
-      <div className="weather-condition__temp">19 c</div>
+      <div className="weather-condition__temp">{`${data.temp[unit]} ${unit}`}</div>
       <div className="weather-condition__desc">
         <div>
           <img src={iumberella} alt="" />
