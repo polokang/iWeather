@@ -29,7 +29,8 @@ export default class WeatherChannel extends React.Component {
           low: { C: 20, F: 60 }
         }
       ],
-      unit: "F"
+      unit: "F",
+      curCity: ""
     };
   }
 
