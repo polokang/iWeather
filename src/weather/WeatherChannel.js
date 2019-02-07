@@ -17,6 +17,24 @@ export default class WeatherChannel extends React.Component {
       },
       forecast: [
         {
+          day: "Thu",
+          time: "12:00",
+          high: { C: 35, F: 85 },
+          low: { C: 25, F: 65 }
+        },
+        {
+          day: "Fri",
+          time: "13:00",
+          high: { C: 30, F: 80 },
+          low: { C: 20, F: 60 }
+        },
+        {
+          day: "Fri",
+          time: "13:00",
+          high: { C: 30, F: 80 },
+          low: { C: 20, F: 60 }
+        },
+        {
           day: "Fri",
           time: "13:00",
           high: { C: 30, F: 80 },

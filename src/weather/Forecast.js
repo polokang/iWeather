@@ -1,15 +1,16 @@
 import React from "react";
 
 
-function Row(data, unit) {
+function Row(props) {
+  const { day, unit } = props;
   return (
     <div className="weather-forecast__row">
-      <span className="weather-forecast__day">{`${data.day}`}</span>
+      <span className="weather-forecast__day">{`${day.day}`}</span>
       <span className="weather-forecast__icon">
-        <i className="fa fa-clock-o" /> {`${data.time}`}
+        <i className="fa fa-clock-o" /> {`${day.time}`}
       </span>
-      <span className="weather-forecast__high">{`${data.high} ${unit}`}</span>
-      <span className="weather-forecast__low">{`${data.low} ${unit}`}</span>
+      <span className="weather-forecast__high">{`${day.high.C} ${unit}`}</span>
+      <span className="weather-forecast__low">{`${day.low.C} ${unit}`}</span>
     </div>
   )
 }
@@ -24,25 +25,8 @@ export default function Forecast(props) {
         <button className="forecast__switch_1">10 items</button>
       </div>
 
-      {/* {data.map((day1, index) => { return <Row key={`${day1.weekday}_${index}`} day={day1} /> })} */}
+      {data.map((day, index) => { return <Row key={`${index}`} day={day} unit={unit} /> })}
 
-      <div className="weather-forecast__row">
-        <span className="weather-forecast__day">{data[0].day}</span>
-        <span className="weather-forecast__icon">
-          <i className="fa fa-clock-o" /> {data[0].time}
-        </span>
-        <span className="weather-forecast__high">{`${data[0].high.C} ${unit}`}</span>
-        <span className="weather-forecast__low">8 c</span>
-      </div>
-
-      <div className="weather-forecast__row">
-        <span className="weather-forecast__day">Fri</span>
-        <span className="weather-forecast__icon">
-          <i className="fa fa-clock-o" /> 16:00
-        </span>
-        <span className="weather-forecast__high">19 c</span>
-        <span className="weather-forecast__low">8 c</span>
-      </div>
     </section>
   );
 }
