@@ -22,7 +22,7 @@ export default function CityCondition(props) {
     <section className="weather-condition">
       <div className="weather-condition__location">{data.city}</div>
       <div style={{ textAlign: "center", fontSize: "14px" }}>Clear</div>
-      <div className="weather-condition__temp">{`${data.temp[unit]} ${unit}`}</div>
+      <div className="weather-condition__temp">{`${data.temp[unit]}`}<sup>&deg;</sup>{`${unit}`}</div>
       <div className="weather-condition__desc">
         <div>
           <img src={iumberella} alt="" />

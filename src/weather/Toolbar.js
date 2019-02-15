@@ -9,11 +9,9 @@ export default function Toolbar(props) {
                 <button className="search-btn"><i className="fa fa-search"></i></button>
 
                 <button className="temp-switch" onClick={switchTemp}>
-                    <i
-                        className="fa fa-thermometer-empty"
+                    <i className="fa fa-thermometer-empty"
                         aria-hidden="true"
-                        style={{ paddingRight: 5 }}
-                    ></i>
+                        style={{ paddingRight: 5 }} ></i>
                     <sup>&deg;</sup>{unit}
                 </button>
             </div>

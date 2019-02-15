@@ -9,8 +9,8 @@ function Row(props) {
       <span className="weather-forecast__icon">
         <i className="fa fa-clock-o" /> {`${day.time}`}
       </span>
-      <span className="weather-forecast__high">{`${day.high.C} ${unit}`}</span>
-      <span className="weather-forecast__low">{`${day.low.C} ${unit}`}</span>
+      <span className="weather-forecast__high">{`${day.high.C}`}<sup>&deg;</sup>{`${unit}`}</span>
+      <span className="weather-forecast__low">{`${day.low.C}`}<sup>&deg;</sup>{`${unit}`}</span>
     </div>
   )
 }
