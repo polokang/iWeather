@@ -48,7 +48,7 @@ export default class WeatherChannel extends React.Component {
         }
       ],
       unit: "F",
-      curCity: ""
+      curCity: "Brisbane"
     };
   }
 
@@ -60,11 +60,20 @@ export default class WeatherChannel extends React.Component {
     }
   }
 
+  switchCity(event) {
+    const value = event.target.value;
+    this.setState({ curCity: value })
+  }
+
+  searchWeather() {
+    console.log(this.state.curCity)
+  }
+
   render() {
-    const { condition, forecast, unit } = this.state;
+    const { condition, forecast, unit, curCity } = this.state;
     return (
       <React.Fragment>
-        <Toolbar unit={unit} switchTemp={() => { this.switchTemp() }} />
+        <Toolbar unit={unit} curCity={curCity} switchTemp={() => { this.switchTemp() }} switchCity={(e) => { this.switchCity(e) }} searchWeather={() => { this.searchWeather() }} />
         <main>
           <CityCondition data={condition} unit={unit} />
           <Forecast data={forecast} unit={unit} />

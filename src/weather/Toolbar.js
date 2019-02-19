@@ -1,12 +1,12 @@
 import React from "react"
 
 export default function Toolbar(props) {
-    const { unit, switchTemp } = props;
+    const { unit, curCity, switchTemp, switchCity, searchWeather } = props;
     return (
         <nav>
             <div style={{ flex: 1 }}>
-                <input className="search-input" />
-                <button className="search-btn"><i className="fa fa-search"></i></button>
+                <input className="search-input" value={curCity} onChange={switchCity} />
+                <button className="search-btn" onClick={searchWeather}><i className="fa fa-search"></i></button>
 
                 <button className="temp-switch" onClick={switchTemp}>
                     <i className="fa fa-thermometer-empty"
